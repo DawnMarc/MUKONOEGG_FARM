@@ -1,0 +1,77 @@
+{% load static %}
+
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Tulumbe</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/jumbotron.css' %}" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
+
+  </head>
+
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Tulumbe</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            &nbsp; &nbsp; &nbsp;
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+</nav>
+
+<main role="main">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+
+    <div class="jumbotron">
+    <p>
+<h2 class="display-3">Register as a Driver</h2>
+
+
+<h2 class="display-3">Register as Driver</h2>
+
+                    <form method="get"  style="align-content: left;">
+                    {form
+
+    {% for field in form %}
+
+        <p>{{ field.label_tag }}</p>
+        <p>{{ field }} </p>
+        {% if field.help_text %}
+          <small style="color: rgb(128,128,128);">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+           style="color:rgb(255,0,0);">{{ error }}
+        {% endfor %}
+  {% endfor %}
+</form>
+
+<div class align="right">
+                <p>
+                    <a class="btn btn-primary btn-lg" href='home.html' role="button">Back</a>
+                    <a class="btn btn-primary btn-lg" href='book.html' role="button">Continue</a>
+
+                </p>
+            </div>
+
+        </div>
+
+</main>
